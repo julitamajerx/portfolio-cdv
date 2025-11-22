@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+  font-size: 90px;
+  margin: 70px 0;
+}
+
+.roles-container {
+  margin-left: 20px;
+  background: #ff8cc6;
+  background: linear-gradient(to top, #ff8cc6 0%, #884ec2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+}
+
+.intro-text {
+  font-weight: 500;
+}
