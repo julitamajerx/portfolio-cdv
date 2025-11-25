@@ -10,7 +10,7 @@
   height: 800px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 1fr 150px;
+  grid-template-rows: 1fr 1fr 50px;
   gap: 30px;
 }
 
@@ -114,7 +114,7 @@
 
 @media (max-width: 480px) {
   .parent {
-    width: 390px;
+    width: 360px;
     height: auto;
     display: flex;
     flex-direction: column;

@@ -49,3 +49,9 @@ p {
   }
 }
 
+@media (max-width: 480px) {
+   .container {
+      font-size: 30px;
+  }
+}
+

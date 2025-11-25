@@ -260,7 +260,7 @@
 }
 @media (max-width: 480px) {
   .parent {
-    max-width: 390px;
+    max-width: 360px;
     height: 1300px;
     display: flex;
     flex-direction: column;
