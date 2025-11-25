@@ -24,3 +24,28 @@ p {
 .intro-text {
   font-weight: 500;
 }
+
+@media (max-width: 1200px) {
+  .container {
+      font-size: 70px;
+  }
+}
+
+@media (max-width: 1024px) {
+   .container {
+      font-size: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+   .container {
+      font-size: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+   .container {
+      font-size: 40px;
+  }
+}
+

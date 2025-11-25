@@ -1,45 +1,128 @@
 .container {
-    width: 100%;
-    display: flex;
-    box-sizing: border-box;
-  padding: 0 20px;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
-.wrapper {
-      width: 1430px;
-      display: flex;
-      justify-content: space-between;
+.parent {
+  width: 1600px;
+  height: 800px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr 150px;
+  gap: 30px;
 }
 
-.test-game {
-width:700px;
-height:750px;
-background-color: #222222;
-border-radius: 30px;
+.test-project {
+  grid-row: span 2 / span 2;
+  background-color: #222222;
+  border-radius: 30px;
 }
 
 .skills {
-width:700px;
-height: 870px;
-background-color: #222222;
-border-radius: 30px;
-padding: 30px;
-box-sizing: border-box;
+  grid-row: span 3 / span 3;
+  background-color: #222222;
+  border-radius: 30px;
+  padding: 30px;
+  box-sizing: border-box;
 }
-
 .skills-list {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .hashtag {
-  display: inline-block; /* dopasowuje szerokość do treści */
-  padding: 10px 25px;     /* odrobinę przestrzeni wokół tekstu */
-  border-radius: 25px;   /* zaokrąglenie rogów */
-  background: linear-gradient(180deg, rgba(255,140,198,1) 0%, rgba(136,78,194,1) 100%);
-  color: white;          /* żeby tekst był widoczny */
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 25px;
+  background: linear-gradient(180deg, rgba(255, 140, 198, 1) 0%, rgba(136, 78, 194, 1) 100%);
+  color: white;
   font-weight: bold;
   margin: 10px;
   font-size: 25px;
   font-weight: 400;
+}
+
+@media (max-width: 1600px) {
+  .parent {
+    width: 1400px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .parent {
+    width: 1200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .parent {
+    width: 1000px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .parent {
+    width: 750px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .test-project {
+    height: 600px;
+  }
+  .skills {
+    height: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .parent {
+    width: 580px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .test-project {
+    height: 600px;
+  }
+  .skills {
+    height: 700px;
+  }
+  .hashtag {
+    display: inline-block;
+    padding: 5px 20px;
+    margin: 5px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .parent {
+    width: 460px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .test-project {
+    height: 600px;
+  }
+  .skills {
+    height: 700px;
+  }
+}
+
+@media (max-width: 480px) {
+  .parent {
+    width: 390px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .test-project {
+    height: 600px;
+  }
+  .skills {
+    height: 700px;
+  }
 }
