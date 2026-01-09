@@ -1,6 +1,19 @@
 <div class="container">
-    <div class="projects-wrapper">
+  <div class="projects-wrapper">
     <h2>PROJECTS</h2>
-
+    <div class="game-cards">
+      @for (game of gameList; track game.id) {
+      <div class="game-card">
+        <div class="game-img">
+          <img src="game.jpeg" />
+        </div>
+        <h3>{{game.title}}</h3>
+        <span class="date">{{game.date}}</span>
+        <div class="hashtag-box">
+          <div class="hashtag">{{game.tag}}</div>
+        </div>
+      </div>
+      }
     </div>
+  </div>
 </div>

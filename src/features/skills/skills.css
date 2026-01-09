@@ -16,8 +16,80 @@
 
 .test-project {
   grid-row: span 2 / span 2;
-  background-color: #222222;
-  border-radius: 30px;
+  position: relative;
+}
+
+.clip-box {
+  --r: 50px;
+  --s: 40px;
+  --x: 120px;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  padding: 6px;
+  box-sizing: border-box;
+  clip-path: shape(from calc(var(--x) + 2*var(--r)) 0,
+    hline to calc(100% - var(--r)),
+    arc to 100% var(--r) of var(--r) cw,
+    vline to calc(100% - var(--s) - 2*var(--r)),
+    arc by calc(-1*var(--r)) var(--r) of var(--r) cw,
+    arc by calc(-1*var(--s)) var(--s) of var(--s),
+    arc by calc(-1*var(--r)) var(--r) of var(--r) cw,
+    hline to var(--r),
+    arc to 0 calc(100% - var(--r)) of var(--r) cw,
+    vline to calc(var(--s) + 2*var(--r)),
+    arc by var(--r) calc(-1*var(--r)) of var(--r) cw,
+    arc by var(--s) calc(-1*var(--s)) of var(--s),
+    arc by var(--r) calc(-1*var(--r)) of var(--r) cw,
+    close
+  );
+}
+
+.frame-container {
+  width: 100%;
+  height: 100%;
+}
+
+.clipped-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  
+  clip-path: shape(from calc(var(--x) + 2*var(--r)) 0,
+    hline to calc(100% - var(--r)),
+    arc to 100% var(--r) of var(--r) cw,
+    vline to calc(100% - var(--s) - 2*var(--r)),
+    arc by calc(-1*var(--r)) var(--r) of var(--r) cw,
+    arc by calc(-1*var(--s)) var(--s) of var(--s),
+    arc by calc(-1*var(--r)) var(--r) of var(--r) cw,
+    hline to var(--r),
+    arc to 0 calc(100% - var(--r)) of var(--r) cw,
+    vline to calc(var(--s) + 2*var(--r)),
+    arc by var(--r) calc(-1*var(--r)) of var(--r) cw,
+    arc by var(--s) calc(-1*var(--s)) of var(--s),
+    arc by var(--r) calc(-1*var(--r)) of var(--r) cw,
+    close
+  );
+}
+
+.relative-button {
+  position: absolute;
+  bottom: 30px; 
+  left: 30px;
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 25px;
+  background: linear-gradient(180deg, rgba(255, 140, 198, 1) 0%, rgba(136, 78, 194, 1) 100%);
+  color: white;
+  margin: 10px;
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.relative-button img {
+  width: 30px;
+  height: 30px;
 }
 
 .skills {
@@ -27,6 +99,7 @@
   padding: 30px;
   box-sizing: border-box;
 }
+
 .skills-list {
   margin-bottom: 30px;
 }
@@ -37,28 +110,37 @@
   border-radius: 25px;
   background: linear-gradient(180deg, rgba(255, 140, 198, 1) 0%, rgba(136, 78, 194, 1) 100%);
   color: white;
-  font-weight: bold;
   margin: 10px;
-  font-size: 25px;
+  font-size: 25.5px;
   font-weight: 400;
 }
 
+.exp-description {
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 25px;
+}
+
+.exp-description li {
+  margin: 10px 0;
+}
+
 @media (max-width: 1600px) {
-  .parent {
-    width: 1400px;
-  }
+  .parent { width: 1400px; }
+  .hashtag { font-size: 22px; }
+  .exp-description { font-size: 22px; }
 }
 
 @media (max-width: 1440px) {
-  .parent {
-    width: 1200px;
-  }
+  .parent { width: 1200px; }
+  .hashtag { font-size: 22px; }
+  .exp-description { font-size: 21px; }
 }
 
 @media (max-width: 1200px) {
-  .parent {
-    width: 1000px;
-  }
+  .parent { width: 1000px; }
+  .hashtag { font-size: 20px; }
+  .exp-description { font-size: 20px; }
 }
 
 @media (max-width: 1024px) {
@@ -68,29 +150,16 @@
     display: flex;
     flex-direction: column;
   }
-  .test-project {
-    height: 600px;
-  }
-  .skills {
-    height: 700px;
-  }
+  .test-project { height: 600px; }
+  .skills { height: auto; }
+  .hashtag { font-size: 22px; }
+  .exp-description { font-size: 22px; }
 }
 
 @media (max-width: 768px) {
-  .parent {
-    width: 580px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-  }
-  .test-project {
-    height: 600px;
-  }
-  .skills {
-    height: 700px;
-  }
+  .parent { width: 580px; }
+  .test-project { height: 500px; }
   .hashtag {
-    display: inline-block;
     padding: 5px 20px;
     margin: 5px;
     font-size: 20px;
@@ -98,31 +167,13 @@
 }
 
 @media (max-width: 600px) {
-  .parent {
-    width: 460px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-  }
-  .test-project {
-    height: 600px;
-  }
-  .skills {
-    height: 700px;
-  }
+  .parent { width: 460px; }
+  .hashtag { font-size: 19px; }
+  .exp-description { font-size: 19px; }
 }
 
 @media (max-width: 480px) {
-  .parent {
-    width: 360px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-  }
-  .test-project {
-    height: 600px;
-  }
-  .skills {
-    height: 700px;
-  }
+  .parent { width: 360px; }
+  .hashtag { font-size: 16px; }
+  .exp-description { font-size: 17px; }
 }

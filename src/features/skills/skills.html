@@ -1,13 +1,34 @@
 <div class="container">
   <div class="parent">
-    <div class="test-project"></div>
+    <div class="test-project">
+      <div class="clip-box">
+        <div class="frame-container">
+          <img src="game.jpeg" class="clipped-image" />
+        </div>
+      </div>
+      <button class="relative-button">TRY OUT 
+        <img src="external-link.png" />
+      </button>
+    </div>
     <div class="skills">
       <div class="skills-list">
         <h2>SKILLS</h2>
-        <div class="hashtag">test skill</div>
+        @for(skill of skills; track skill) {
+        <div class="hashtag">{{ skill }}</div>
+        }
       </div>
       <div class="experience">
         <h2>EXPERIENCE</h2>
+        <div class="exp-description">
+          ITBOOM | <strong>Full-Stack .NET Development Internship</strong>: August 2025 – October 2025
+          <ul>
+            <li>Implementing silent sign-in using <strong>MSAL</strong>.</li>
+            <li>Developing UI components based on <strong>Kendo UI</strong>.</li>
+            <li>Applying <strong>Ardalis Clean Architecture</strong> principles.</li>
+            <li>Building and integrating <strong>REST APIs</strong>.</li>
+            <li><strong>Automating email delivery </strong>and Teams calendar event creation.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

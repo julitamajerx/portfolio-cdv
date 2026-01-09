@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { GameService } from '../../games/game-service';
 
 @Component({
   selector: 'app-projects',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './projects.css',
 })
 export class Projects {
+  private gameService = inject(GameService);
+  protected gameList = this.gameService.gameList;
 
 }
