@@ -3,9 +3,9 @@
     <h2>PROJECTS</h2>
     <div class="game-cards">
       @for (game of gameList; track game.id) {
-      <div class="game-card">
+      <div class="game-card" (click)="goToSelectedGame(game.id)">
         <div class="game-img">
-          <img src="game.jpeg" />
+          <img src={{game.img}} />
         </div>
         <h3>{{game.title}}</h3>
         <span class="date">{{game.date}}</span>

@@ -9,14 +9,14 @@ export const sample_games: Game[] = [
     tag: 'GMTK Game Jam 2023',
   },
   {
-    id: 0,
+    id: 1,
     img: 'game.jpeg',
     title: 'Cats Tower Defence',
     date: 'March 2025 - June 2025',
     tag: 'tower defence',
   },
   {
-    id: 0,
+    id: 2,
     img: 'game.jpeg',
     title: 'Mater Dei',
     date: 'April 2024 - July 2024',
