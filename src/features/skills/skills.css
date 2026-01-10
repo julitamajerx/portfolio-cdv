@@ -19,6 +19,11 @@
   position: relative;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .clip-box {
   --r: 50px;
   --s: 40px;
@@ -87,6 +92,9 @@
   font-weight: 400;
   border: none;
   cursor: pointer;
+  display: flex;
+  gap:5px;
+  align-items: center;
 }
 
 .relative-button img {

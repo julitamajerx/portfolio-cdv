@@ -4,4 +4,5 @@ export interface Game {
     title: string;
     date: string;
     tag: string;
+    cover: string;
 }

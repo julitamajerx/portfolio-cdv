@@ -33,6 +33,11 @@
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+  color:#C1C1C1;
+}
+
 .slim-box {
   width: 385px;
   height: 120px;

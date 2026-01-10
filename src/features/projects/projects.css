@@ -38,6 +38,7 @@ grid-row-gap: 0px;
   position: relative;
   bottom: 45px;
   gap: 10px;
+  cursor:pointer;
 }
 
 .date {
