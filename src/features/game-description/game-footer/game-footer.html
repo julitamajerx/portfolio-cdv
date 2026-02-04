@@ -1,0 +1,70 @@
+<div class="grid-container">
+  <div class="left-panel">
+    <h3>What I learned?</h3>
+    @if (game?.id === 0) {
+      <p>
+        Developing PinAway was a significant milestone in my growth as a developer, as it taught me
+        how to effectively bridge the gap between clean code principles and Unity-specific
+        workflows. I gained experience in creating dynamic UI animations with DOTween, moving away
+        from traditional Animator components. Finally, I developed a deeper understanding of event
+        delegation and centralized management patterns through the EnemiesManager, enhancing my
+        ability to create decoupled and efficient game systems.
+      </p>
+    }
+    @if (game?.id === 1) {
+      <p>
+        Working on this project taught me how to effectively manage complex UI systems and
+        synchronize them with real-time game states. I gained a deep understanding of performance
+        optimization through Object Pooling and by minimizing logic overhead in Update methods using
+        event-driven systems. I mastered the mathematical foundations of 3D object rotation and
+        implemented non-linear progression systems for gameplay balancing. Additionally, this
+        project solidified my knowledge of data persistence using PlayerPrefs and professional audio
+        management using the AudioMixer for logarithmic volume control.
+      </p>
+    }
+    @if (game?.id === 2) {
+      <p>
+        This project significantly deepened my understanding of the Unity Input System and the
+        importance of separating input logic from physics calculations. I learned how to use
+        FixedUpdate for consistent movement regardless of frame rate and how to implement Ground
+        Checking using OverlapCircle for reliable jump mechanics. Managing object lifecycles with
+        Coroutines and handling 2D collisions taught me how to create efficient, bug-free combat
+        interactions. Finally, implementing smooth camera interpolation gave me insight into how
+        small mathematical details like Slerp can drastically improve the overall production quality
+        of a game.
+      </p>
+    }
+  </div>
+  <div class="right-panel">
+    <h3>Test project</h3>
+    @if (game?.id === 0) {
+      <iframe
+        frameborder="0"
+        src="https://itch.io/embed/4041379?border_width=&amp;dark=true"
+        width="100%"
+        height="177"
+        ><a href="https://scapegoat666.itch.io/pinaway">Pin Away by scApeGoAT666</a></iframe
+      >
+    }
+    @if (game?.id === 1) {
+      <iframe
+        frameborder="0"
+        src="https://itch.io/embed/3695407?border_width=2&amp;dark=true"
+        width="100%"
+        height="177"
+        ><a href="https://scapegoat666.itch.io/cats-tower-defence"
+          >Cats - Tower Defence by scApeGoAT666</a
+        ></iframe
+      >
+    }
+    @if (game?.id === 2) {
+      <iframe
+        frameborder="0"
+        src="https://itch.io/embed/4183644?border_width=2&amp;dark=true"
+        width="100%"
+        height="177"
+        ><a href="https://scapegoat666.itch.io/mater-dei">Mater Dei by scApeGoAT666</a></iframe
+      >
+    }
+  </div>
+</div>

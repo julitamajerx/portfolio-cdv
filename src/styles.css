@@ -1,3 +1,5 @@
+@import 'highlight.js/styles/atom-one-dark.css';
+
 body {
   background-color: #171717;
   margin: 0;
@@ -27,3 +29,10 @@ h3 {
     font-size: 30px;
   }
 }
+
+pre code {
+  border-radius: 8px;
+  font-family: 'Fira Code', monospace; 
+  font-size: 18px;
+}
+

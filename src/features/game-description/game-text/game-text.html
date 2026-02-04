@@ -1,0 +1,131 @@
+<div class="container">
+  @if (game?.id === 0) {
+    <p>
+      In my project PinAway, I focused on creating a scalable and clean architecture by separating
+      data from logic and ensuring that every system is modular. I implemented a data-driven
+      approach using ScriptableObjects for enemy configurations, which allows for rapid iteration of
+      gameplay mechanics like field of view or detection radius without modifying the core engine
+      code.
+    </p>
+    <pre><code [highlight]="pa1" language="csharp"></code></pre>
+    <p>
+      To maintain a high standard of code maintainability, I avoided "magic strings" by centralizing
+      all global values into dedicated constant classes. This includes everything from animation
+      hashes, which I pre-calculate for better performance, to specific Addressables paths and tags,
+      ensuring that a simple typo won't break the entire game flow.
+    </p>
+    <pre><code [highlight]="pa2" language="csharp"></code></pre>
+    <p>
+      The game state management is handled by a robust factory system that utilizes binary
+      serialization. I designed the GameStateFactory to automatically manage directory creation and
+      file streaming within the persistentDataPath, providing a reliable save system that works
+      across different platforms.
+    </p>
+    <pre><code [highlight]="pa3" language="csharp"></code></pre>
+    <p>
+      For the user interface, I moved away from heavy Animator components in favor of a code-based
+      tweening system using DOTween. This allowed me to create sophisticated UI sequences, like the
+      win panel, where I can chain animations and callbacks together with high precision, even when
+      the game time is paused.
+    </p>
+    <pre><code [highlight]="pa4" language="csharp"></code></pre>
+    <p>
+      Finally, I implemented a centralized management pattern where the EnemiesManager acts as an
+      orchestrator for all active enemies. By utilizing event delegation, I can capture individual
+      enemy detections and bubble them up to the game context, keeping the communication between
+      different sub-managers clean and decoupled.
+    </p>
+    <pre><code [highlight]="pa5" language="csharp"></code></pre>
+  }
+  @if (game?.id === 1) {
+    <p>
+      In this project, I developed a comprehensive Tower Defense system, focusing on modular unit
+      management, intelligent turret behavior, and a highly responsive user interface. I utilized
+      architectural patterns that allow for easy expansion, enabling the addition of new enemy types
+      and upgrades without modifying the core gameplay loop.
+    </p>
+    <p>
+      One of the standout features is the turret aiming system, which uses spherical interpolation
+      (Slerp) for smooth target tracking. I implemented a dual-axis rotation logic where the turret
+      base and the gun barrel rotate independently, providing a realistic mechanical feel and
+      allowing for high precision when calculating firing angles.
+    </p>
+    <pre><code [highlight]="c1" language="csharp"></code></pre>
+    <p>
+      I adopted a data-driven approach by using ScriptableObjects to define enemy statistics. This
+      allows for rapid prototyping of new units directly within the Unity Editor—defining health,
+      rewards, and movement speed—which are then seamlessly integrated into the NavMesh navigation
+      system.
+    </p>
+    <pre><code [highlight]="c2" language="csharp"></code></pre>
+    <p>
+      To ensure optimal performance, I implemented Object Pooling for particle effects triggered
+      upon enemy death. Instead of the costly process of constantly instantiating and destroying
+      objects, the system recycles particle systems through a pool, significantly reducing memory
+      spikes during intense waves.
+    </p>
+    <pre><code [highlight]="c3" language="csharp"></code></pre>
+    <p>
+      I also developed a sophisticated UI system that handles "drag and drop" turret placement with
+      real-time position previews and a dynamic upgrade menu. Each turret features a unique
+      progression path (damage, accuracy, or reload speed), with costs scaling dynamically as the
+      player progresses.
+    </p>
+    <pre><code [highlight]="c4" language="csharp"></code></pre>
+    <p>
+      For the narrative elements, I built a comic-style cutscene controller that manages sequential
+      panel displays using Coroutines. This system integrates with PlayerPrefs to track if a player
+      has already viewed the story, allowing the game to automatically skip cutscenes in subsequent
+      playthroughs for a better user experience.
+    </p>
+    <pre><code [highlight]="c5" language="csharp"></code></pre>
+    <div class="container-photo-cats">
+      <img class="photo" src="cats1.png" alt="" />
+      <img class="photo" src="cats2.png" alt="" />
+      <img class="photo" src="cats1.png" alt="" />
+      <img class="photo" src="cats2.png" alt="" />
+    </div>
+  }
+  @if (game?.id === 2) {
+    <p>
+      In this 2D platformer project, I focused on creating a responsive and modern control system
+      using the Unity Input System. I implemented a modular player controller that handles
+      physics-based movement, combat, and camera dynamics, ensuring a smooth "feel" for the player
+      through precise physics interactions and hardware-independent movement.
+    </p>
+    <p>
+      For the player movement, I integrated the new Input System package using callback contexts.
+      This allowed me to implement "variable jump height"—where the jump force is cut in half if the
+      button is released early—giving the player much more granular control over their positioning.
+    </p>
+    <pre><code [highlight]="m1" language="csharp"></code></pre>
+    <p>
+      To handle character orientation, I developed a non-destructive Flip() method. By manipulating
+      the localScale of the Transform, the player character and all child objects (like the shooting
+      point) flip correctly while maintaining the integrity of the physics colliders.
+    </p>
+    <pre><code [highlight]="m2" language="csharp"></code></pre>
+    <p>
+      The combat system is designed around projectile physics. The Bullet script manages its own
+      lifecycle and collision logic, interacting with enemies through a specialized MonsterDamage
+      interface. I used a combination of OnTriggerEnter2D and Coroutines to ensure projectiles are
+      cleaned up either on impact or after a set time to prevent memory leaks.
+    </p>
+    <pre><code [highlight]="m3" language="csharp"></code></pre>
+    <p>
+      For the camera, I implemented a smooth follow system using Spherical Linear Interpolation
+      (Slerp) in LateUpdate. This ensures that the camera movement is calculated after the player's
+      physics have updated, eliminating jitter and providing a more cinematic, delayed following
+      effect with a custom vertical offset.
+    </p>
+    <pre><code [highlight]="m4" language="csharp"></code></pre>
+    <div class="container-photo">
+      <img class="photo" src="mater1.png" alt="" />
+      <img class="photo" src="mater3.png" alt="" />
+      <img class="photo" src="mater4.jpg" alt="" />
+      <img class="photo" src="mater5.png" alt="" />
+    </div>
+
+    
+  }
+</div>

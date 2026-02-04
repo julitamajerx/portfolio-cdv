@@ -4,3 +4,11 @@
     background: #ff8cc6;
   background: linear-gradient(180deg, rgba(255, 140, 198, 1) 0%, rgba(136, 78, 194, 1) 100%);
 }
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  height: 100%;
+}

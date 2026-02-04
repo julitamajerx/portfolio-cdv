@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     gap:15px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 .game-title-container img{
    width:40px;

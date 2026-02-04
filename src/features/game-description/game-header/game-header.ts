@@ -1,18 +1,13 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { GameService } from '../../../games/game-service';
+import { Component, Input } from '@angular/core';
 import { Game } from '../../../games/game-model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-game-header',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './game-header.html',
   styleUrl: './game-header.css',
 })
-export class GameHeader implements OnInit {
-  protected game?:Game;
-  private gameService = inject(GameService);
-  
-   ngOnInit(): void {
-    this.game = this.gameService.getGameById();
-  }
+export class GameHeader {
+  @Input() game?: Game;
 }

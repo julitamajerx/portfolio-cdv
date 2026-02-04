@@ -5,4 +5,7 @@ export interface Game {
     date: string;
     tag: string;
     cover: string;
+    team?: number;
+    role?: string;
+    description?: string;
 }
